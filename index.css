@@ -19,7 +19,7 @@
 	text-align:center;
 	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
-	color: #746c48;
+	color: #c8b55b;
 	display:block;
 }
 
@@ -49,8 +49,8 @@ body {
 
 .front {
 	font-family: 'Roboto', sans-serif;
-	margin-left:30%;
-	width:69%;
+	padding-left:35%;
+	width:60%;
 	text-align:center;
 	color:white;
 	position:absolute;
@@ -73,4 +73,8 @@ body {
 
 .animate__animated.animate__fadeIn {
 	--animate-duration:2s;
+}
+
+h1, h2{
+	font-weight:normal;
 }
