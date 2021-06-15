@@ -54,6 +54,7 @@ body {
 	text-align:center;
 	color:white;
 	position:absolute;
+	overflow:hidden;
 }
 
 .noms {
