@@ -1,15 +1,22 @@
 window.onload = function(){
 	var images = document.getElementsByClassName("mosaic");
 	for (var i = 0; i < images.length ; i++){
-	   images[i].addEventListener("click", displayBig);
+	   images[i].addEventListener("click", switchImage);
 	}
+	
+	displayBig();
+}
+
+function switchImage(){
+	var bigImage = document.getElementById("fullImage");
+	bigImage.src = this.src;
+	displayBig();
+	animateCSS(this, 'fadeIn');
 }
 
 function displayBig(){
 	var bigImage = document.getElementById("fullImage");
-	bigImage.src = this.src;
 	animateCSS(bigImage,'fadeInLeft');
-
 }
 
 const animateCSS = (element,animation, prefix = 'animate__') =>
