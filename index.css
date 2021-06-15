@@ -65,3 +65,11 @@ body {
 	font-size:15px;
 	margin-top:-60px;
 }
+
+.animate__animated.animate__flipInX {
+	--animate-duration:1s;
+}
+
+.animate__animated.animate__fadeIn {
+	--animate-duration:2s;
+}
