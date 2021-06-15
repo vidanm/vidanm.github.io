@@ -2,3 +2,18 @@
 	border-radius:20px;
 	padding-top:50px;
 }
+
+
+.images table {
+	margin-top:100px;
+	text-align:center;
+	display:inline-block;
+}
+
+.images td img {
+	width:150px;
+	height:150px;
+	border-radius:20px;
+	object-fit: cover;
+}
+
