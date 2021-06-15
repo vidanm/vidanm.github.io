@@ -1,11 +1,11 @@
 #fullImage {
-	border-radius:20px;
 	padding-top:50px;
+	height:600px;
 }
 
 
 .images table {
-	margin-top:100px;
+	margin-top:50px;
 	text-align:center;
 	display:inline-block;
 }
@@ -13,5 +13,8 @@
 .images td img {
 	width:150px;
 	height:150px;
-	border-radius:20px;
+	margin-left:10px;
+	margin-top:10px;
+	border-radius:30px;
+	object-fit:cover;
 }
