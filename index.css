@@ -15,6 +15,7 @@
 
 .navbar p, .navbar a{
 	padding: 8px,8px,8px,32px;
+	margin-top:30px;
 	text-decoration:none;
 	text-align:center;
 	font-family: 'Roboto', sans-serif;
@@ -98,4 +99,10 @@ h1, h2{
 
 a {
 	color:#120a08;
+}
+
+#cv {
+	width:100%;
+	height:100vh;
+	border-style:none;
 }
