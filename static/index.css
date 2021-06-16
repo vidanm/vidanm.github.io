@@ -59,7 +59,7 @@ body {
 
 .back {
 	background-image: url("../Images/office.png");
-	filter: blur(100px);
+	filter:saturate(0.6) blur(100px);
 	width:99vw;
 	height:99vh;
 	background-size:fit;
