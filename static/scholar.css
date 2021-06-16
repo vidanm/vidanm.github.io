@@ -1,11 +1,12 @@
 .noms {
 	margin-top:50px;
+	font-weight:100;
 }
 
 .scholarsection {
 	background-color:#171614;
 	margin:auto;
-	border-radius:50px;
+	border-radius:10px;
 	padding:10px;
 	margin-top:50px;
 	width:600px;
@@ -13,8 +14,9 @@
 
 .scholarsection h1 {
 	margin-top:0px;
-	border-bottom:1px solid #9a8873;
-	color:#9a8873;
+	font-weight:300;
+	border-bottom:1px solid #346751;
+	color:#346751;
 }
 
 .scholarsection p {
