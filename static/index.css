@@ -129,19 +129,4 @@ a {
 	border-style:none;
 }
 
-@keyframes open {
-	from {height: 0;}
-	to {height: 400;}
-}
 
-#info {
-	margin-top:50px;
-	border-radius:10px;
-	text-align:left;
-	padding:20px;
-	background-color:#101010;
-	height:0px;
-	overflow:hidden;
-	animation-name:open;
-	animation-duration: 2s;
-}

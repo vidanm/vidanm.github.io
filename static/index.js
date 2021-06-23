@@ -1,18 +1,10 @@
 window.onload = function(){
-	hideInfo();
 	var x = document.getElementById("arrow");
 	x.addEventListener("click", showInfo);
 }
 
-function hideInfo(){
-	var x = document.getElementById("info");
-	x.style.display = "none";
-}
-
 function showInfo(){
-	var x = document.getElementById("info");
-	x.style.display = "block";
-	x.style.height = "400px";
+	x.style.margin-left = "400px";
 }
 
 const animateCSS = (element,animation, prefix = 'animate__') =>
