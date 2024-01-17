@@ -1,11 +1,5 @@
 "use client";
 import { motion } from 'framer-motion';
-import { readdirSync } from 'fs';
-import React from 'react';
-
-let goTo = ({ url }: Readonly<{ url: string }>) => {
-  location.href = url;
-}
 
 function SquareImage({ src }: Readonly<{ src: string }>) {
   return (
@@ -28,12 +22,12 @@ function MyButton({ name,src }: Readonly<{ name: string,src:string }>) {
 function Resume() {
   return (
     <div>
-      <h3 >Vidan MURATI</h3>
-      <h1 className="font-bold">Développeur Junior </h1>
+      <h3 className="subsubtitle" >Vidan MURATI</h3>
+      <h1 className="title font-bold">Développeur Junior </h1>
       <h5 className="font-bold"><span className="text-orange-300">Compétences</span> en C++ / Programmation orientée objet / OpenGL </h5>
       <p className="my-2">
-        Jeune diplômé d'un Master Informatique Sciences de l'image,
-        passionné d'algorithmie, des technologies 3D et de vision par ordinateur.
+        Jeune diplômé d&apos;un Master Informatique Sciences de l&apos;image,
+        passionné d&apos;algorithmie, des technologies 3D et de vision par ordinateur.
       </p>
       <MyButton name={"Découvrir mon CV"} src={"CV/CV.pdf"}></MyButton>
     </div>);
@@ -49,7 +43,7 @@ function Logo({ source, url }: Readonly<{ source: string, url: string }>) {
 
 export default function Page() {
   return (
-    <main>
+    <main className="background-watercolor">
       <div className="flex min-h-screen items-center justify-between p-48">
         <SmoothTransition>
           <div className="rounded flex flex-col bg-white shadow-lg border-orange-100 border-4" style={{ opacity: 0.9 }}>
