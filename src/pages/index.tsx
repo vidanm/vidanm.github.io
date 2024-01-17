@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 function SquareImage({ src }: Readonly<{ src: string }>) {
   return (
-    <motion.img initial={{ x: 500 }} viewport={{ once: true }} whileInView={{ x: 0 }} transition={{ type: "spring", duration: 2 }} whileHover={{ scale: 1.3 }} src={src} className='aspect-square rounded-lg' />
+    <motion.img initial={{ x: 500 }} viewport={{ once: true }} whileInView={{ x: 0 }} transition={{ type: "spring", duration: 2 }} whileHover={{ scale: 1.1 }} src={src} className='aspect-square rounded-lg' />
   )
 }
 
@@ -13,6 +13,25 @@ function SmoothTransition({ children }: Readonly<{ children: React.ReactNode }>)
       {children}
     </motion.div>
   )
+}
+
+function Experience({title,tools,resume,description,image}: Readonly<{title:string,tools:string,resume:string,description:string[],image:string}>){
+      return (<div className='rounded-lg ms-24 me-24 mt-12 '>
+          <div className="flex-row flex justify-center ">
+            <div className="flex flex-col justify-center items-center basis-2/5 p-4 m-4">
+          <img src={image}/>
+          </div>
+          <div className="flex flex-col justify-center rounded-lg basis-3/5 p-8 m-4 bg-white" style={{opacity:0.8}}>
+            <p className="font-bold text-3xl">{title} <span className='ms-1 text-orange-400'>{tools}</span></p>
+            <p className="font-light text-md">{resume}</p>
+            <ul className='text-sm'>
+                {description.map((d,i) => {
+                  return <li key={i}>- {d}</li>
+                })}
+            </ul>
+          </div>
+          </div>
+        </div>);
 }
 
 function MyButton({ name,src }: Readonly<{ name: string,src:string }>) {
@@ -32,6 +51,7 @@ function Resume() {
       <MyButton name={"Découvrir mon CV"} src={"CV/CV.pdf"}></MyButton>
     </div>);
 }
+
 
 function RoundedPicture() {
   return (<motion.img initial={{ opacity: 0, width: 200 }} animate={{ opacity: 1, width: 200 }} alt="Vidan MURATI" className="" src="photo_profil_3.jpg" />)
@@ -69,6 +89,56 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <SmoothTransition>
+        <Experience title={"GLTF Viewer"} 
+        tools={"C++"} 
+        resume={"Réalisation d'un outil de rendu d'objets 3D au format GLTF."} 
+        image={"gltfviewer.png"}
+        description={[
+        "Étude du format GLTF, structures de données etc.",
+        "Affichage des meshes",
+        "Application des textures",
+        "Calcul des lumières (Directional lighting / Spotlight...)",
+        "Permettre à l'utilisateur de se déplacer dans la scène 3D",
+        "Permettre à l'utilisateur d'agir sur les paramètres de la scène 3D",
+        "Calcul des normal maps"]}/>
+      </SmoothTransition>
+      <SmoothTransition>
+        <Experience title={"Animation physique d'un drapeau"} 
+        tools={"C / Raylib"} 
+        resume={"Réalisation d'un drapeau animé en 3D."} 
+        image={"drapeau.jpg"}
+        description={[
+        "Implémentation d'un système masses ressorts",
+        "Affinage des paramètres de la simulation",
+        "Modification dynamique des paramètres",
+        "Calcul des forces",
+        "Calcul du vent"]}/>
+      </SmoothTransition>
+      <SmoothTransition>
+        <Experience title={"Aide à l'implantation des articles en vue d'un office"} 
+        tools={"C# / Javascript / D3js"} 
+        resume={"Projet logistique, permettant à un utilisateur d'attribuer des articles à des emplacements en fonction de différents critères."} 
+        image={"implantation.png"}
+        description={[
+        "Mapping de données en BDD avec des graphs SVG",
+        "Interactivité, pour permettre l'association article / emplacement",
+        "Filtres et recherche parmis les critères",
+        "Recueil de besoin, réunions régulières avec les services concernés par l'outil",
+        "État d'avancement régulier, difficultés étudiées en équipe"]}/>
+      </SmoothTransition>
+      <SmoothTransition>
+        <Experience title={"Cartographie des stocks"} 
+        tools={"C# / Javascript / D3js"} 
+        resume={"Projet logistique de visualisation des stocks, jusqu'au niveau des emplacements."} 
+        image={"carto.png"}
+        description={[
+        "Mapping de données en BDD avec des graphs SVG",
+        "Création de graphs représentant les stocks (vue de dessus / vue de face)",
+        "Carte OSM avec visualisation du nombre d'articles par entrepôt",
+        "Recherche et filtres parmi tous les articles",
+        "Dégradé de couleurs pour représenter des critères customisables"]}/>
+      </SmoothTransition>
       <div className='rounded-lg ms-24 me-24 mt-24 '>
         <div className="flex-row flex justify-center ">
           <div className="flex flex-col justify-center items-center basis-2/5 p-4 m-4">
@@ -97,6 +167,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      
     </main>
   )
 }
