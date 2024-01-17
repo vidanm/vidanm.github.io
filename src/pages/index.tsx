@@ -22,8 +22,8 @@ function MyButton({ name,src }: Readonly<{ name: string,src:string }>) {
 function Resume() {
   return (
     <div>
-      <h3 className="subsubtitle" >Vidan MURATI</h3>
-      <h1 className="title font-bold">Développeur Junior </h1>
+      <h3 className="font-bold" >Vidan MURATI</h3>
+      <h1 className="text-2xl font-bold">Développeur Junior </h1>
       <h5 className="font-bold"><span className="text-orange-300">Compétences</span> en C++ / Programmation orientée objet / OpenGL </h5>
       <p className="my-2">
         Jeune diplômé d&apos;un Master Informatique Sciences de l&apos;image,
