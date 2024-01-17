@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 function SquareImage({ src }: Readonly<{ src: string }>) {
   return (
-    <motion.img initial={{ x: 500, zIndex: -10 }} viewport={{ once: true }} whileInView={{ x: 0 }} transition={{ type: "spring", duration: 2 }} whileHover={{ scale: 1.3 }} src={src} className='aspect-square rounded-lg' />
+    <motion.img initial={{ x: 500 }} viewport={{ once: true }} whileInView={{ x: 0 }} transition={{ type: "spring", duration: 2 }} whileHover={{ scale: 1.3 }} src={src} className='aspect-square rounded-lg' />
   )
 }
 
@@ -69,7 +69,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className='rounded-lg m-24 '>
+      <div className='rounded-lg ms-24 me-24 mt-24 '>
         <div className="flex-row flex justify-center ">
           <div className="flex flex-col justify-center items-center basis-2/5 p-4 m-4">
             <div className="grid grid-cols-4 gap-1">
