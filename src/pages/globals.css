@@ -2,6 +2,7 @@
     background-image: url("~/public/watercolor.jpg");
     background-size: cover;
     background-attachment:fixed;
+    overflow-x:hidden;
   }
 
 .first-title {
