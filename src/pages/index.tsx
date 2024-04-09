@@ -42,11 +42,9 @@ function Resume() {
   return (
     <div>
       <h3 className="font-bold" >Vidan MURATI</h3>
-      <h1 className="text-2xl font-bold">Développeur Junior </h1>
-      <h5 className="font-bold"><span className="text-orange-300">Compétences</span> en C++ / Programmation orientée objet / OpenGL </h5>
+      <h1 className="text-2xl font-bold">Ingénieur études et développement informatique Junior </h1>
       <p className="my-2">
-        Jeune diplômé d&apos;un Master Informatique Sciences de l&apos;image,
-        passionné d&apos;algorithmie, des technologies 3D et de vision par ordinateur.
+        Jeune diplômé d&apos;un Master Informatique Sciences de l&apos;image
       </p>
       <MyButton name={"Découvrir mon CV"} src={"CV/CV.pdf"}></MyButton>
     </div>);
@@ -54,7 +52,7 @@ function Resume() {
 
 
 function RoundedPicture() {
-  return (<motion.img initial={{ opacity: 0, width: 200 }} animate={{ opacity: 1, width: 200 }} alt="Vidan MURATI" className="" src="photo_profil_3.jpg" />)
+  return (<motion.img initial={{ opacity: 0, width: 200 }} animate={{ opacity: 1, width: 200 }} alt="Vidan MURATI" className="" src="pp_rounded.png" />)
 }
 
 function Logo({ source, url }: Readonly<{ source: string, url: string }>) {
@@ -90,6 +88,18 @@ export default function Page() {
         </div>
       </div>
       <SmoothTransition>
+        <Experience title={"Cartographie des stocks"} 
+        tools={"C# / Javascript / D3js"} 
+        resume={"Projet logistique de visualisation des stocks, jusqu'au niveau des emplacements."} 
+        image={"carto.png"}
+        description={[
+        "Mapping de données en BDD avec des graphs SVG",
+        "Création de graphs représentant les stocks (vue de dessus / vue de face)",
+        "Carte OSM avec visualisation du nombre d'articles par entrepôt",
+        "Recherche et filtres parmi tous les articles",
+        "Dégradé de couleurs pour représenter des critères customisables"]}/>
+      </SmoothTransition>
+      <SmoothTransition>
         <Experience title={"GLTF Viewer"} 
         tools={"C++"} 
         resume={"Réalisation d'un outil de rendu d'objets 3D au format GLTF."} 
@@ -116,6 +126,14 @@ export default function Page() {
         "Calcul du vent"]}/>
       </SmoothTransition>
       <SmoothTransition>
+        <Experience title="Rust Allocine Scraper"
+          tools={"Rust"}
+          resume={"Développement d'une application de scraping du site allocine.fr"}
+          image={"rust.png"}
+          description={[""]}
+        />
+      </SmoothTransition>
+      <SmoothTransition>
         <Experience title={"Aide à l'implantation des articles en vue d'un office"} 
         tools={"C# / Javascript / D3js"} 
         resume={"Projet logistique, permettant à un utilisateur d'attribuer des articles à des emplacements en fonction de différents critères."} 
@@ -126,18 +144,6 @@ export default function Page() {
         "Filtres et recherche parmis les critères",
         "Recueil de besoin, réunions régulières avec les services concernés par l'outil",
         "État d'avancement régulier, difficultés étudiées en équipe"]}/>
-      </SmoothTransition>
-      <SmoothTransition>
-        <Experience title={"Cartographie des stocks"} 
-        tools={"C# / Javascript / D3js"} 
-        resume={"Projet logistique de visualisation des stocks, jusqu'au niveau des emplacements."} 
-        image={"carto.png"}
-        description={[
-        "Mapping de données en BDD avec des graphs SVG",
-        "Création de graphs représentant les stocks (vue de dessus / vue de face)",
-        "Carte OSM avec visualisation du nombre d'articles par entrepôt",
-        "Recherche et filtres parmi tous les articles",
-        "Dégradé de couleurs pour représenter des critères customisables"]}/>
       </SmoothTransition>
       <div className='rounded-lg ms-24 me-24 mt-24 '>
         <div className="flex-row flex justify-center ">
@@ -167,7 +173,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-      
     </main>
   )
 }
