@@ -1,5 +1,5 @@
 .background-watercolor {
-    background-image: url("~/public/watercolor.jpg");
+    background-image: url("~/public/watercolor_blurred.jpg");
     background-size: cover;
     background-attachment:fixed;
     overflow-x:hidden;

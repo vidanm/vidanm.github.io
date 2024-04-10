@@ -129,8 +129,8 @@ export default function Page() {
         <Experience title="Rust Allocine Scraper"
           tools={"Rust"}
           resume={"Développement d'une application de scraping du site allocine.fr"}
-          image={"rust.png"}
-          description={[""]}
+          image={"rust_1.png"}
+          description={["https://github.com/vidanm/rust_allocine_scraper"]}
         />
       </SmoothTransition>
       <SmoothTransition>
