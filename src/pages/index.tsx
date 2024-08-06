@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 
 function SquareImage({ src }: Readonly<{ src: string }>) {
   return (
-    <motion.img initial={{ x: 500 }} viewport={{ once: true }} whileInView={{ x: 0 }} transition={{ type: "spring", duration: 2 }} whileHover={{ scale: 1.1 }} src={src} className='aspect-square rounded-lg' />
+    <div>
+      <motion.img initial={{ x: 500 }} viewport={{ once: true }} whileInView={{ x: 0 }} transition={{ type: "spring", duration: 0.25 }} whileHover={{ scale: 1.1 }} src={src} className='aspect-square rounded-lg object-cover' />
+    </div>
   )
 }
 
@@ -16,14 +18,15 @@ function SmoothTransition({ children }: Readonly<{ children: React.ReactNode }>)
 }
 
 function Experience({title,tools,resume,description,image}: Readonly<{title:string,tools:string,resume:string,description:string[],image:string}>){
-      return (<div className='rounded-lg ms-24 me-24 mt-12 '>
+      return (<div className='rounded-lg md:ms-24 md:me-24 mt-4 md:mt-12 '>
           <div className="flex-row flex justify-center ">
-            <div className="flex flex-col justify-center items-center basis-2/5 p-4 m-4">
-          <img src={image}/>
+            <div className="flex flex-col hidden md:block justify-center items-center basis-2/5 p-4 md:m-4">
+            <img alt="experience" src={image}/>
           </div>
-          <div className="flex flex-col justify-center rounded-lg basis-3/5 p-8 m-4 bg-white" style={{opacity:0.8}}>
-            <p className="font-bold text-3xl">{title} <span className='ms-1 text-orange-400'>{tools}</span></p>
-            <p className="font-light text-md">{resume}</p>
+          <div className="flex flex-col md:justify-center rounded-lg md:basis-3/5 p-8 md:m-4 bg-white" style={{opacity:0.8}}>
+            <p className="font-bold text-2xl">{title}</p>
+            <span className='ms-1 font-light text-blue-400'>{tools}</span>
+            <p className="font-bold text-md">{resume}</p>
             <ul className='text-sm'>
                 {description.map((d,i) => {
                   return <li key={i}>- {d}</li>
@@ -35,7 +38,7 @@ function Experience({title,tools,resume,description,image}: Readonly<{title:stri
 }
 
 function MyButton({ name,src }: Readonly<{ name: string,src:string }>) {
-  return (<motion.button whileHover={{ scale: 1.1 }} onClick={(e) => { location.href = src }} style={{ width: 200 }} className="text-orange-300 hover:bg-orange-300 hover:text-white border border-orange-300 p-2 my-2 rounded-lg" type="button">{name}</motion.button>)
+  return (<motion.button whileHover={{ scale: 1.1 }} onClick={(e) => { location.href = src }} style={{ width: 200 }} className="text-blue-300 hover:bg-blue-300 hover:text-white font-bold border-2 border-blue-300 p-2 my-2 rounded-lg" type="button">{name}</motion.button>)
 }
 
 function Resume() {
@@ -44,7 +47,7 @@ function Resume() {
       <h3 className="font-bold" >Vidan MURATI</h3>
       <h1 className="text-2xl font-bold">Ingénieur études et développement informatique Junior </h1>
       <p className="my-2">
-        Jeune diplômé d&apos;un Master Informatique Sciences de l&apos;image
+        À la recherche de nouveaux défis techniques enrichissant ! ⚔
       </p>
       <MyButton name={"Découvrir mon CV"} src={"CV/CV.pdf"}></MyButton>
     </div>);
@@ -56,43 +59,47 @@ function RoundedPicture() {
 }
 
 function Logo({ source, url }: Readonly<{ source: string, url: string }>) {
-  return (<motion.img whileHover={{ scale: 1.1 }} style={{ width: 50 }} src={source} onClick={(e) => { location.href = url }} alt="linkedin" />)
+  return (<a href={`${url}`}>
+    <motion.img whileHover={{ scale: 1.1 }} style={{ width:50}} src={source} onClick={(e) => { location.href = url }} alt="linkedin" />
+  </a> )
 }
 
 export default function Page() {
   return (
     <main className="background-watercolor">
-      <div className="flex min-h-screen items-center justify-between p-48">
+      <div className="flex md:min-h-screen items-center justify-between md:p-48">
         <SmoothTransition>
-          <div className="rounded flex flex-col bg-white shadow-lg border-orange-100 border-4" style={{ opacity: 0.9 }}>
-            <div className="flex-row flex ">
+          <div className="rounded flex flex-col bg-white shadow-lg border-red-300 border-4" style={{ opacity: 0.9 }}>
+            <div className="flex-row flex">
               <div className="flex flex-col p-4 m-4">
                 <Resume />
               </div>
-              <div className="flex my-auto flex-col p-4 m-4">
+              <div className="flex my-auto flex-col p-4 m-4 hidden md:block">
                 <RoundedPicture />
               </div>
             </div>
           </div>
+          <div className='flex mt-4 flex-row justify-center items-center'>
+            <div className='m-1'>
+              <Logo source={"linkedin.png"} url={"https://www.linkedin.com/in/vidan-murati-ab02b91b3/"} />
+            </div>
+            <div className='m-1'>
+              <Logo source={"Arobase.png"} url={"mailto:vidanmurati@hotmail.fr"} />
+            </div>
+            <div className='m-1'>
+              <Logo source={"Instagram.png"} url={"https://www.instagram.com/vidanm_/"}/>
+            </div>
+          </div>
         </SmoothTransition>
-        <div className="flex-col justify-center m-4 items-center flex">
-          <div className='m-1'>
-            <Logo source={"linkedin.png"} url={"https://www.linkedin.com/in/vidan-murati-ab02b91b3/"} />
-          </div>
-          <div className='m-1'>
-            <Logo source={"Arobase.png"} url={"mailto:vidanmurati@hotmail.fr"} />
-          </div>
-          <div className='m-1'>
-            <Logo source={"Instagram.png"} url={"https://www.instagram.com/vidanm_/"}/>
-          </div>
-        </div>
       </div>
       <SmoothTransition>
         <Experience title={"Cartographie des stocks"} 
-        tools={"C# / Javascript / D3js"} 
+        tools={"C# / D3js / AzureDevOps"} 
         resume={"Projet logistique de visualisation des stocks, jusqu'au niveau des emplacements."} 
         image={"carto.png"}
         description={[
+        "Conception de l'application (UML), rédaction de documentation techniques",
+        "Étude du terrain et des difficultés de représentation",
         "Mapping de données en BDD avec des graphs SVG",
         "Création de graphs représentant les stocks (vue de dessus / vue de face)",
         "Carte OSM avec visualisation du nombre d'articles par entrepôt",
@@ -116,7 +123,7 @@ export default function Page() {
       <SmoothTransition>
         <Experience title={"Animation physique d'un drapeau"} 
         tools={"C / Raylib"} 
-        resume={"Réalisation d'un drapeau animé en 3D."} 
+        resume={"Réalisation d'un drapeau dans le vent en 3D."} 
         image={"drapeau.jpg"}
         description={[
         "Implémentation d'un système masses ressorts",
@@ -127,7 +134,7 @@ export default function Page() {
       </SmoothTransition>
       <SmoothTransition>
         <Experience title="Rust Allocine Scraper"
-          tools={"Rust"}
+          tools={"Rust / Docker / ReactJS"}
           resume={"Développement d'une application de scraping du site allocine.fr"}
           image={"rust_1.png"}
           description={["https://github.com/vidanm/rust_allocine_scraper"]}
@@ -135,7 +142,7 @@ export default function Page() {
       </SmoothTransition>
       <SmoothTransition>
         <Experience title={"Aide à l'implantation des articles en vue d'un office"} 
-        tools={"C# / Javascript / D3js"} 
+        tools={"C# / D3js / AzureDevOps"} 
         resume={"Projet logistique, permettant à un utilisateur d'attribuer des articles à des emplacements en fonction de différents critères."} 
         image={"implantation.png"}
         description={[
@@ -145,7 +152,7 @@ export default function Page() {
         "Recueil de besoin, réunions régulières avec les services concernés par l'outil",
         "État d'avancement régulier, difficultés étudiées en équipe"]}/>
       </SmoothTransition>
-      <div className='rounded-lg ms-24 me-24 mt-24 '>
+      <div className='rounded-lg ms-24 me-24 mt-24 hidden md:block'>
         <div className="flex-row flex justify-center ">
           <div className="flex flex-col justify-center items-center basis-2/5 p-4 m-4">
             <div className="grid grid-cols-4 gap-1">
