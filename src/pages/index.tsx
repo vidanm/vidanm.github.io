@@ -11,19 +11,19 @@ function SquareImage({ src }: Readonly<{ src: string }>) {
 
 function SmoothTransition({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ type: "spring", duration: 1 }}>
+    <motion.div initial={{ opacity: 0, x: -100 }} viewport={{once:true}} whileInView={{ opacity: 1, x: 0 }} transition={{ type: "spring", duration: 1 }}>
       {children}
     </motion.div>
   )
 }
 
 function Experience({ title, tools, resume, description = [], image, links = [] }: Readonly<{ title: string, tools: string, resume: string, description: string[], image: string, links?: string[] }>) {
-  return (<div className='rounded-lg md:ms-24 md:mt-0 md:me-24 mt-4 md:mt-12 '>
+  return (<div className='rounded-lg md:ms-24 md:mt-0 md:me-24 mt-4 '>
     <div className="flex-row flex justify-center ">
       <div className="flex flex-col hidden md:block justify-center items-center basis-2/5 p-4 md:m-4">
         <img alt="experience" src={image} />
       </div>
-      <div className="flex flex-col md:justify-center rounded-lg md:basis-3/5 p-8 md:m-4 bg-black/50 text-white" style={{ opacity: 0.8 }}>
+      <div className="flex flex-col md:justify-center rounded-lg md:basis-3/5 p-8 md:m-4 bg-black/50 text-white">
         <p className="font-bold text-2xl text-white">{title}</p>
         <span className='ms-1 font-bold text-blue-400'>{tools}</span>
         <p className="font-bold text-md">{resume}</p>
@@ -48,10 +48,11 @@ function MyButton({ name, src }: Readonly<{ name: string, src: string }>) {
 function Resume() {
   return (
     <div>
-      <h3 className="text-4xl font-bold" >Vidan MURATI</h3>
+      <h3 className="text-4xl font-bold" >Vidan MURATI 👋</h3>
       <h1 className="text-2xl text-blue-200 font-bold">Ingénieur études et développement informatique Junior </h1>
       <p className="my-2">
-        À la recherche de nouveaux défis techniques enrichissant ! ⚔
+        À la recherche de nouveaux défis techniques enrichissant !
+
       </p>
       <MyButton name={"Découvrir mon CV"} src={"CV/CV.pdf"}></MyButton>
     </div>);
@@ -69,7 +70,7 @@ function Logo({ source, url }: Readonly<{ source: string, url: string }>) {
 }
 
 function SectionTitle({ title }: Readonly<{ title: string }>) {
-  return (<h1 className='md:ms-36 md:me-24 font-bold text-4xl md:text-6xl pb-4 mt-8 ps-4 mb-0 bg-blue-100/75  inline-block text-transparent bg-clip-text' >
+  return (<h1 className='md:ms-36 md:me-24 font-light text-6xl pb-4 mt-8 ps-4 mb-0 bg-blue-100/75  inline-block text-transparent bg-clip-text' >
     {title}
   </h1>)
 }
@@ -102,7 +103,7 @@ export default function Page() {
           </div>
         </SmoothTransition>
       </div>
-      <SectionTitle title="Projets" />
+      <SectionTitle title="_projetS" />
       <SmoothTransition>
         <Experience title={"Cartographie des stocks"}
           tools={"C# / D3js / AzureDevOps"}
@@ -165,7 +166,7 @@ export default function Page() {
             "État d'avancement régulier, difficultés étudiées en équipe"]} />
       </SmoothTransition>
       <div className='rounded-lg ms-24 me-24 mt-12 hidden md:block'>
-      <SectionTitle title="Autres" />
+      <SectionTitle title="_autreS" />
         <div className="flex-row flex justify-center ">
           <div className="flex flex-col justify-center items-center basis-2/5 p-4 m-4">
             <div className="grid grid-cols-4 gap-1">
